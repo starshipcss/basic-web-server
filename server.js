@@ -23,7 +23,7 @@ function sendFile(res, filePath) {
     if (err) {
       console.error("error while reading file", err);
       res.writeHead(500, { "Content-Type": "text/plain" });
-      res.end("server error");
+      return res.end("server error");
     }
 
     res.writeHead(200, { "Content-Type": getContentType(filePath) });
